@@ -5,7 +5,7 @@
   "author": "Alexey Mironenko",
   "repository": {
     "type": "git",
-    "url": "git@github.com:AlexMarvelo/Ciklum-JS-Internship-task.git"
+    "url": "git@bitbucket.org:AlexMarvelo/ciklum-js-internship-task.git"
   },
   "license": "ISC",
   "dependencies": {
