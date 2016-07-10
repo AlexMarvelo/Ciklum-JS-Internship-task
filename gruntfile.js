@@ -166,6 +166,13 @@ module.exports = function(grunt) {
                 tasks: ['browserify']
             }
         },
+
+        'gh-pages': {
+            options: {
+                base: 'build'
+            },
+            src: ['./index.html', './css/**', './fonts/**', './img/**', './js/**', './libs/**']
+        },
     });
 
     grunt.registerTask('compile', ['copy', 'jade', 'sass', 'browserify', 'postcss']);
