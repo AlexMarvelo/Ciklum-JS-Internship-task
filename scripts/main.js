@@ -1,11 +1,15 @@
-$(document).ready(function(){
- 
+requirejs.config({
+    baseUrl: 'js',
+    paths: {
+        pageHeader: 'modules/pageHeader',
+        pageFooter: 'modules/pageFooter'
+    }
 });
 
-$(document).ready(function(){
-  console.log('pageFooter script loaded');
-});
-
-$(document).ready(function(){
-  console.log('pageHeader script loaded');
+requirejs([
+    'pageHeader',
+    'pageFooter'
+], function(pageHeader, pageFooter) {
+    pageHeader.init();
+    pageFooter.init();
 });

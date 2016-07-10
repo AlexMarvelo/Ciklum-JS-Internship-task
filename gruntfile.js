@@ -37,26 +37,31 @@ module.exports = function(grunt) {
 
         watch: {
             grunt: {
-                files: ['Gruntfile.js']
+                files: ['gruntfile.js']
             },
             jade: {
-                files: ['views/*.jade',
-                    'blocks/*/*.jade',
+                files: [
+                    'views/*.jade',
+                    'blocks/**/*.jade',
                     'img/svg/*.svg'
                 ],
                 tasks: ['jade']
             },
             sass: {
-                files: ['styles/*.sass', 'styles/modules/*.sass', 'blocks/*/*.sass'],
+                files: ['styles/*.sass', 'styles/modules/*.sass', 'blocks/**/*.sass'],
                 tasks: ['sass', 'postcss']
             },
             less: {
-                files: ['styles/*.less', 'styles/modules/*.less', 'blocks/*/*.less'],
+                files: ['styles/*.less', 'styles/modules/*.less', 'blocks/**/*.less'],
                 tasks: ['less', 'postcss']
             },
-            concat: {
-                files: ['scripts/global.js', 'blocks/*/*.js'],
-                tasks: ['concat']
+            js_main: {
+                files: ['scripts/main.js'],
+                tasks: ['copy:js']
+            },
+            js_modules: {
+                files: ['blocks/**/*.js'],
+                tasks: ['copy:js_modules']
             }
         },
 
@@ -65,8 +70,8 @@ module.exports = function(grunt) {
                 //separator: ';',
             },
             dist: {
-                src: ['scripts/global.js', 'blocks/*/*.js'],
-                dest: 'scripts/main.js',
+                src: ['scripts/global.js', 'blocks/**/*.js'],
+                dest: 'build/js/main,js',
             },
         },
 
@@ -86,7 +91,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'img/',
-                    src: ['**/*.{png,jpg,gif}'],
+                    src: ['*/*.{png,jpg,gif}'],
                     dest: 'img/minified/'
                 }]
             }
@@ -126,6 +131,7 @@ module.exports = function(grunt) {
                 src: [
                     './node_modules/jquery/dist/jquery.min.js',
                     './node_modules/bootstrap/dist/css/bootstrap.min.css',
+                    './node_modules/requirejs/require.js',
                 ],
                 dest: 'build/libs/',
                 flatten: true,
@@ -133,17 +139,25 @@ module.exports = function(grunt) {
             },
             js: {
                 expand: true,
-                cwd: './scripts/',
-                src: ['main.js', ],
+                cwd: 'scripts/',
+                src: 'main.js',
                 dest: 'build/js/',
+                flatten: true,
+                filter: 'isFile',
+            },
+            js_modules: {
+                expand: true,
+                cwd: 'blocks/',
+                src: '*/*.js',
+                dest: 'build/js/modules',
                 flatten: true,
                 filter: 'isFile',
             },
             fonts: {
                 expand: true,
                 cwd: './fonts/',
-                src: ['./**', ],
-                dest: 'build/fonts/',
+                src: ['./*', './**/*' ],
+                dest: './build/fonts/',
                 flatten: true,
                 filter: 'isFile',
             },
@@ -151,14 +165,14 @@ module.exports = function(grunt) {
                 expand: true,
                 cwd: './',
                 src: ['./img/*'],
-                dest: 'build/img/',
+                dest: './build/img/',
                 flatten: true,
                 filter: 'isFile',
             }
         },
     });
 
-    grunt.registerTask('compile', ['jade', 'sass', 'postcss', 'concat', 'copy']);
+    grunt.registerTask('compile', ['jade', 'sass', 'postcss', 'copy']);
     grunt.registerTask('minimize', ['uglify', 'cssmin']);
     grunt.registerTask('default', ['compile', 'watch']);
     grunt.task.run('notify_hooks');

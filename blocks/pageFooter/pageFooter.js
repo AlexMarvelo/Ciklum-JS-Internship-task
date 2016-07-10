@@ -1,3 +1,7 @@
-$(document).ready(function(){
-  console.log('pageFooter script loaded');
-});
+define([], function() { return {
+
+init: function() {
+    // console.log('pageFooter initialised');
+}
+
+}});

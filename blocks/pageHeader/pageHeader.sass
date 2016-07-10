@@ -1,0 +1,123 @@
+.pageHeader
+    color: #2F2F2F
+    box-shadow: 0 1px 0 rgba(0,0,0,0.1)
+    font-size: 15px
+    background: white
+    font-weight: 300
+    letter-spacing: 1px
+.pageHeader__headBtn
+    display: block
+    line-height: 48px
+    transition: background-color .3s ease-out
+.pageHeader__headBtn:hover
+    background-color: #f2f2f2
+.pageHeader__container
+    width: 90%
+    margin: 0 auto
+.pageHeader__container::after
+    content: ''
+    display: table
+    clear: both
+.pageHeader__logoContainer
+    display: inline-block
+    float: left
+    width: 108px
+    min-height: 48px
+.pageHeader__logo
+    width: 100%
+    padding: 12px 0
+.pageHeader__signInContainer
+    display: inline-block
+    float: right
+.pageHeader__signIn
+    padding: 0 12px
+    font-size: 14px
+    transition: color .3s ease-out, background-color .3s ease-out
+.pageHeader__signIn:hover,
+.pageHeader__signIn:active
+    color: #0078d7
+.pageHeader__cartCountContainer
+    display: inline-block
+    float: right
+.pageHeader__cartCount
+    padding: 0 20px
+    font-size: 14px
+.pageHeader__seacrhForm
+    display: inline-block
+    float: right
+    padding: 6px 5px
+.pageHeader__seacrhInput
+    width: 244px
+    border: 1px solid #A9A9A9
+    height: 36px
+    padding: 0 10px
+
+
+
+.pageHeader__mainMenuContainer
+    display: inline-block
+    float: left
+    margin-left: 18px
+.pageHeader__mainMenu
+    display: inline-block
+    float: left
+.pageHeader__mainMenuItem
+    display: inline-block
+    float: left
+    position: relative
+.pageHeader__mainMenu::after
+    content: ''
+    display: table
+    clear: both
+.pageHeader__mainMenuLink
+    padding: 0 22px
+.pageHeader__mainMenuSubmenuContainer
+    width: 476px
+    position: absolute
+    top: 48px
+    left: 0
+    display: none
+    height: 0
+    overflow: hidden
+    transition: height .3s ease-out
+.pageHeader__mainMenuSubmenu
+    width: 50%
+    background-color: #f2f2f2
+    padding-bottom: 8px
+    border-left: 1px solid rgba(0,0,0,0.05)
+    border-right: 1px solid rgba(0,0,0,0.05)
+    border-bottom: 1px solid rgba(0,0,0,0.3)
+.pageHeader__mainMenuSubmenuLink
+    padding: 0 24px
+    width: 100%
+.pageHeader__mainMenuSubmenuLink:hover
+    background-color: #e5e5e5
+.pageHeader__mainMenuSubSubmenu
+    width: 100%
+    position: absolute
+    min-height: 50%
+    background: #e5e5e5
+    top: 0
+    left: 50%
+    display: none
+    padding-bottom: 8px
+    border-right: 1px solid rgba(0,0,0,0.05)
+    border-bottom: 1px solid rgba(0,0,0,0.3)
+.pageHeader__mainMenuSubSubmenuLink
+    padding: 0 24px
+    width: 100%
+.pageHeader__mainMenuSubSubmenuLink:hover
+    background-color: #d9d9d9
+.pageHeader__mainMenuSubmenu
+    a:not([href="javascript:void(0)"]):hover
+        text-decoration: underline
+.pageHeader__mainMenuItem_opened
+    .pageHeader__mainMenuLink
+        background-color: #f2f2f2
+    .pageHeader__mainMenuSubmenuContainer
+        display: block
+.pageHeader__mainMenuSubmenuItem_opened
+    .pageHeader__mainMenuSubmenuLink
+        background-color: #e5e5e5
+    .pageHeader__mainMenuSubSubmenu
+        display: block
