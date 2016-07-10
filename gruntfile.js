@@ -4,14 +4,31 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        browserify: {
+            dist: {
+                files: {
+                    'build/js/main.js': ['scripts/main.js', 'blocks/**/*.js']
+                },
+                options: {
+                    transform: [
+                        ['babelify', {
+                            presets: ['es2015'],
+                        }]
+                    ],
+                    browserifyOptions: {
+                        debug: true,
+                    },
+                },
+            }
+        },
+
         sass: {
             dist: {
                 options: {
                     style: 'expanded'
                 },
                 files: {
-                    'build/css/main.css': ['styles/main.sass'],
-                    'build/css/fonts.css': ['styles/fonts.sass']
+                    'build/css/main.css': ['styles/main.sass']
                 }
             }
         },
@@ -19,7 +36,7 @@ module.exports = function(grunt) {
         less: {
             dist: {
                 files: {
-                    'css/main.css': ['styles/main.less'],
+                    'build/css/main.css': ['styles/main.less'],
                 }
             }
         },
@@ -32,36 +49,6 @@ module.exports = function(grunt) {
                 files: {
                     'build/index.html': ['views/index.jade']
                 }
-            }
-        },
-
-        watch: {
-            grunt: {
-                files: ['gruntfile.js']
-            },
-            jade: {
-                files: [
-                    'views/*.jade',
-                    'blocks/**/*.jade',
-                    'img/svg/*.svg'
-                ],
-                tasks: ['jade']
-            },
-            sass: {
-                files: ['styles/*.sass', 'styles/modules/*.sass', 'blocks/**/*.sass'],
-                tasks: ['sass', 'postcss']
-            },
-            less: {
-                files: ['styles/*.less', 'styles/modules/*.less', 'blocks/**/*.less'],
-                tasks: ['less', 'postcss']
-            },
-            js_main: {
-                files: ['scripts/main.js'],
-                tasks: ['copy:js']
-            },
-            js_modules: {
-                files: ['blocks/**/*.js'],
-                tasks: ['copy:js_modules']
             }
         },
 
@@ -97,6 +84,18 @@ module.exports = function(grunt) {
             }
         },
 
+        cssmin: {
+            minify: {
+                files: [{
+                    expand: true,
+                    cwd: 'build/css/',
+                    src: '*.css',
+                    dest: 'build/css',
+                    ext: '.min.css'
+                }]
+            }
+        },
+
         postcss: {
             options: {
                 map: false,
@@ -112,51 +111,22 @@ module.exports = function(grunt) {
             }
         },
 
-        cssmin: {
-            minify: {
-                files: [{
-                    expand: true,
-                    cwd: 'build/css/',
-                    src: '*.css',
-                    dest: 'build/css',
-                    ext: '.min.css'
-                }]
-            }
-        },
-
         copy: {
             libs: {
                 expand: true,
                 cwd: './',
                 src: [
                     './node_modules/jquery/dist/jquery.min.js',
-                    './node_modules/bootstrap/dist/css/bootstrap.min.css',
-                    './node_modules/requirejs/require.js',
+                    './node_modules/bootstrap/dist/css/bootstrap.min.css'
                 ],
                 dest: 'build/libs/',
-                flatten: true,
-                filter: 'isFile',
-            },
-            js: {
-                expand: true,
-                cwd: 'scripts/',
-                src: 'main.js',
-                dest: 'build/js/',
-                flatten: true,
-                filter: 'isFile',
-            },
-            js_modules: {
-                expand: true,
-                cwd: 'blocks/',
-                src: '*/*.js',
-                dest: 'build/js/modules',
                 flatten: true,
                 filter: 'isFile',
             },
             fonts: {
                 expand: true,
                 cwd: './fonts/',
-                src: ['./*', './**/*' ],
+                src: ['./*', './**/*'],
                 dest: './build/fonts/',
                 flatten: true,
                 filter: 'isFile',
@@ -170,9 +140,35 @@ module.exports = function(grunt) {
                 filter: 'isFile',
             }
         },
+
+        watch: {
+            grunt: {
+                files: ['gruntfile.js']
+            },
+            jade: {
+                files: [
+                    'views/*.jade',
+                    'blocks/**/*.jade',
+                    'img/svg/*.svg'
+                ],
+                tasks: ['jade']
+            },
+            sass: {
+                files: ['styles/*.sass', 'styles/modules/*.sass', 'blocks/**/*.sass'],
+                tasks: ['sass', 'postcss']
+            },
+            less: {
+                files: ['styles/*.less', 'styles/modules/*.less', 'blocks/**/*.less'],
+                tasks: ['less', 'postcss']
+            },
+            js: {
+                files: ['scripts/main.js', 'blocks/**/*.js'],
+                tasks: ['browserify']
+            }
+        },
     });
 
-    grunt.registerTask('compile', ['jade', 'sass', 'postcss', 'copy']);
+    grunt.registerTask('compile', ['copy', 'jade', 'sass', 'browserify', 'postcss']);
     grunt.registerTask('minimize', ['uglify', 'cssmin']);
     grunt.registerTask('default', ['compile', 'watch']);
     grunt.task.run('notify_hooks');

@@ -1,4 +1,4 @@
-define([], function() { return {
+module.exports = {
 
 init: function() {
     $('.pageHeader').each(function() {
@@ -35,7 +35,6 @@ init: function() {
             });
         });
     });
-    // console.log('pageHeader initialised');
 
     function closeMainMenuSubmenu(mainMenuItem){
         var mainMenuSubmenuContainer = mainMenuItem.find('.pageHeader__mainMenuSubmenuContainer'),
@@ -50,9 +49,9 @@ init: function() {
             mainMenuSubmenu = mainMenuItem.find('.pageHeader__mainMenuSubmenu');
         mainMenuItem.addClass('pageHeader__mainMenuItem_opened');
         setTimeout(function(){
-             mainMenuSubmenuContainer.height(mainMenuSubmenu.height());
+             mainMenuSubmenuContainer.height(mainMenuSubmenu.height() + 10);
         }, 300);
     }
 }
 
-}});
+}

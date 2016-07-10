@@ -1,7 +1,7 @@
-define([], function() { return {
+module.exports = {
 
 init: function() {
-    // console.log('pageFooter initialised');
+    
 }
 
-}});
+};
