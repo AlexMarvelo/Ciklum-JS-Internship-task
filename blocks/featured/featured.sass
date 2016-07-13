@@ -1,0 +1,54 @@
+.featured
+    &__list::after
+        content: ''
+        display: table
+        clear: both
+    &__listItem
+        background: #282828
+        height: 300px
+        overflow: hidden
+        position: relative
+        width: 100%
+        &:hover
+            .featured__itemBg
+                opacity: .8
+                transform: scale(1.1, 1.1)
+    &__itemBg
+        background-position: center center
+        background-repeat: no-repeat
+        background-size: cover
+        height: 300px
+        opacity: .3
+        text-align: center
+        transition: transform .3s, opacity .3s
+        width: 100%
+    &__itemContent
+        box-sizing: border-box
+        padding: 0 32px
+        position: absolute
+        top: 50%
+        transform: translate(0, -50%)
+        width: 100%
+    &__itemTitle
+        color: #fff
+        font-size: 22px
+        font-weight: 400
+        letter-spacing: 1.5px
+        line-height: 28px
+        margin: 0
+        text-align: center
+    &__itemSubtitle
+        color: #a4a5a6
+        font-size: 13px
+        font-weight: 400
+        letter-spacing: 2px
+        line-height: 16px
+        margin: 0
+        text-align: center
+
+
+@media screen and (min-width: 767px)
+    .featured
+        &__listItem
+            float: left
+            width: 33.33333333%
