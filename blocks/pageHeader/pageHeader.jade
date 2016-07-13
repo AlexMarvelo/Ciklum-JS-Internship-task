@@ -9,8 +9,9 @@ header.pageHeader
             include pageHeader__mainMenu.jade
         .pageHeader__signInContainer
             a(href="#" tabindex="#{tabindex++}").pageHeader__headBtn.pageHeader__signIn Sign in
+        button.pageHeader__mainMenuToggle.pageHeader__mainMenuToggle_mobile.pageHeader__headBtn
         .pageHeader__cartCountContainer
             a(href="#" tabindex="#{tabindex++}").pageHeader__headBtn.pageHeader__cartCount 0
         form(id="pageHeader__seacrhForm", method="#", action="#").pageHeader__seacrhForm
             input(type="search" maxlength="200" placeholder="Search Microsoft.com").pageHeader__seacrhInput
-            
+            button(type="submit").pageHeader__seacrhBtn

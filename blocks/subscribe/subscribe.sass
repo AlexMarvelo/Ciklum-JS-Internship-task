@@ -1,0 +1,120 @@
+.subscribe
+    background: #323a45
+    text-align: center
+    padding: 160px 0 145px
+    position: relative
+    font-weight: 300
+    letter-spacing: .5px
+    &__container
+        max-width: 1320px
+        margin-left: auto
+        margin-right: auto
+        padding: 0 20px
+        clear: both
+    &__title
+        color: white
+        font-size: 30px
+        margin-bottom: 55px
+        font-weight: 300
+        letter-spacing: 1.5px
+        line-height: 36px
+        strong
+            font-weight: 400
+    &__form
+        display: inline-block
+        margin: 0 -5px 5px
+    &__inpWrapper
+        position: relative
+        float: left
+        margin: 0
+        margin-bottom: 25px
+        width: 280px
+        padding: 0 5px
+    &__inpLabel
+        position: absolute
+        top: 0
+        left: 0
+        font-size: 18px
+        color: #8a959e
+        margin: 16px 0px 0px 55px
+        font-weight: 300
+        line-height: 33px
+    &__icon
+        position: absolute
+        top: 18px
+        left: 20px
+    &__icon_user
+        display: inline-block
+        vertical-align: middle
+        height: 24px
+        width: 24px
+        background-image: url('../img/invasion-sprite.png')
+        background-position: 0 -474px
+        background-repeat: no-repeat
+    &__icon_email
+        display: inline-block
+        vertical-align: middle
+        height: 24px
+        width: 24px
+        background-image: url('../img/invasion-sprite.png')
+        background-position: 0 -386px
+        background-repeat: no-repeat
+    &__icon_lock
+        display: inline-block
+        vertical-align: middle
+        height: 24px
+        width: 24px
+        background-image: url('../img/invasion-sprite.png')
+        background-position: 0 -430px
+        background-repeat: no-repeat
+    &__inp
+        background: white
+        line-height: 1em
+        border-radius: 3px
+        padding: 18px 15px 18px 48px
+        margin: 0
+        border: 1px solid #d4d7da
+        width: 100%
+        height: 63px
+        font-size: 18px
+    &__terms
+        font-size: 12px
+        line-height: 1.8em
+        color: #747c83
+        margin-bottom: 0
+        a
+            text-decoration: underline
+            &:hover
+                color: white
+    &__formSubmit
+        display: inline-block
+        padding: 21px 40px 19px
+        background: #ff3366
+        border: 0
+        border-radius: 5px
+        color: white
+        font-size: 15px
+        line-height: 1em
+        height: 63px
+        letter-spacing: 1px
+        font-weight: 400
+        text-transform: uppercase
+        cursor: pointer
+        transition: background-color 0.3s
+        &:hover
+            background-color: #f42156
+
+
+@media screen and (max-width: 1170px)
+    .subscribe
+        padding-top: 80px
+        padding-bottom: 80px
+        &__inpWrapper
+            margin-left: auto
+            margin-right: auto
+            float: none
+
+@media screen and (max-width: 776px)
+    .subscribe
+        padding-top: 55px
+        padding-bottom: 55px
