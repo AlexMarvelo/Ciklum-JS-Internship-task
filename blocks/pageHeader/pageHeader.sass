@@ -6,276 +6,282 @@
     font-weight: 300
     letter-spacing: 1px
     z-index: 98
-.pageHeader__headBtn
-    display: block
-    line-height: 48px
-    transition: background-color .3s ease-out
-.pageHeader__headBtn:hover
-    background-color: #f2f2f2
-.pageHeader__container
-    width: 90%
-    margin: 0 auto
-.pageHeader__container::after
-    content: ''
-    display: table
-    clear: both
-.pageHeader__logoContainer
-    display: inline-block
-    float: left
-    width: 108px
-    min-height: 48px
-.pageHeader__logo
-    width: 100%
-    padding: 12px 0
-.pageHeader__signInContainer
-    display: inline-block
-    float: right
-.pageHeader__signIn
-    padding: 0 15px
-    font-size: 14px
-    transition: color .3s ease-out, background-color .3s ease-out
-.pageHeader__signIn:hover,
-.pageHeader__signIn:active
-    color: #0078d7
-.pageHeader__cartCountContainer
-    display: inline-block
-    float: right
-.pageHeader__cartCount
-    padding: 0 15px 0 35px
-    font-size: 14px
-    position: relative
-.pageHeader__cartCount::before
-    content: ""
-    position: absolute
-    left: 13px
-    top: 12px
-    background: url("../img/cart.png") no-repeat center
-    background-size: contain
-    width: 20px
-    height: 20px
-.pageHeader__seacrhForm
-    display: inline-block
-    float: right
-    padding: 6px 5px
-    position: relative
-    height: 48px
-.pageHeader__seacrhInput
-    width: 244px
-    border: 1px solid #A9A9A9
-    height: 36px
-    padding: 0 40px 0 10px
-.pageHeader__seacrhBtn
-    position: absolute
-    top: 6px
-    right: 5px
-    width: 40px
-    height: 36px
-    margin: 0
-    padding: 0
-    border: none
-    background: none
-.pageHeader__seacrhBtn::before
-    content: ''
-    position: absolute
-    width: 100%
-    height: 100%
-    top: 0
-    left: 0
-    background: url("../img/search.png") no-repeat center
-    background-size: 20px
+    &__headBtn
+        display: block
+        line-height: 48px
+        transition: background-color .3s ease-out
+        &:hover
+            background-color: #f2f2f2
+    &__container
+        width: 90%
+        margin: 0 auto
+        &::after
+            content: ''
+            display: table
+            clear: both
+    &__logoContainer
+        display: inline-block
+        float: left
+        width: 108px
+        min-height: 48px
+    &__logo
+        width: 100%
+        padding: 12px 0
+    &__signInContainer
+        display: inline-block
+        float: right
+    &__signIn
+        padding: 0 15px
+        font-size: 14px
+        transition: color .3s ease-out, background-color .3s ease-out
+        &:hover,
+        &:active
+            color: #0078d7
+    &__cartCountContainer
+        display: inline-block
+        float: right
+    &__cartCount
+        padding: 0 15px 0 35px
+        font-size: 14px
+        position: relative
+        &::before
+            content: ""
+            position: absolute
+            left: 13px
+            top: 12px
+            background: url("../img/cart.png") no-repeat center
+            background-size: contain
+            width: 20px
+            height: 20px
+    &__seacrhForm
+        display: inline-block
+        float: right
+        padding: 6px 5px
+        position: relative
+        height: 48px
+    &__seacrhInput
+        width: 244px
+        border: 1px solid #A9A9A9
+        height: 36px
+        padding: 0 40px 0 10px
+    &__seacrhBtn
+        position: absolute
+        top: 6px
+        right: 5px
+        width: 40px
+        height: 36px
+        margin: 0
+        padding: 0
+        border: none
+        background: none
+        &::before
+            content: ''
+            position: absolute
+            width: 100%
+            height: 100%
+            top: 0
+            left: 0
+            background: url("../img/search.png") no-repeat center
+            background-size: 20px
 
 
-.pageHeader__mainMenuContainer
-    display: inline-block
-    float: left
-    margin-left: 18px
-.pageHeader__mainMenu
-    display: inline-block
-    float: left
-.pageHeader__mainMenuItem
-    display: inline-block
-    float: left
-    position: relative
-.pageHeader__mainMenu::after
-    content: ''
-    display: table
-    clear: both
-.pageHeader__mainMenuLink
-    padding: 0 27px 0 22px
-    position: relative
-.pageHeader__mainMenuLink[href="javascript:void(0)"]::after
-    content: ""
-    position: absolute
-    top: 20px
-    right: 15px
-    z-index: 100
-    background: url("../img/DropDownIcon.png") no-repeat center
-    width: 7px
-    height: 7px
-    background-size: contain
-.pageHeader__mainMenuSubmenuContainer
-    width: 476px
-    position: absolute
-    top: 48px
-    left: 0
-    display: none
-    height: 0
-    overflow: hidden
-    transition: height .3s ease-out
-    z-index: 99
-.pageHeader__mainMenuSubmenu
-    width: 50%
-    background-color: #f2f2f2
-    padding-bottom: 8px
-    border-left: 1px solid rgba(0,0,0,0.05)
-    border-right: 1px solid rgba(0,0,0,0.05)
-    border-bottom: 1px solid rgba(0,0,0,0.3)
-.pageHeader__mainMenuSubmenuLink
-    padding: 0 24px
-    width: 100%
-    position: relative
-.pageHeader__mainMenuSubmenuLink:hover
-    background-color: #e5e5e5
-.pageHeader__mainMenuSubmenuLink[href="javascript:void(0)"]::after
-    content: ''
-    position: absolute
-    top: 50%
-    margin-top: -3px
-    right: 24px
-    background: url("../img/DropDownIcon.png") no-repeat center
-    width: 7px
-    height: 7px
-    background-size: contain
-    z-index: 100
-    transform: rotate(-90deg)
-.pageHeader__mainMenuSubSubmenuLink
-    padding: 0 24px
-    width: 100%
-.pageHeader__mainMenuSubSubmenuLink:hover
-    background-color: #d9d9d9
-.pageHeader__mainMenuSubmenu
-    a:not([href="javascript:void(0)"]):hover
-        text-decoration: underline
-.pageHeader__mainMenuItem_opened
-    .pageHeader__mainMenuLink
+.pageHeader
+    &__mainMenuToggle
+        height: 48px
+        background: url('../img/menu.png') no-repeat center
+        background-size: 20px
+        width: 50px
+        float: right
+        display: inline-block
+        padding: 0
+        margin: 0
+        border: none
+    &__mainMenuContainer
+        display: inline-block
+        float: left
+        margin-left: 18px
+    &__mainMenu
+        display: inline-block
+        float: left
+        &::after
+            content: ''
+            display: table
+            clear: both
+    &__mainMenuItem
+        display: inline-block
+        float: left
+        position: relative
+        &_opened
+            .pageHeader__mainMenuLink
+                background-color: #f2f2f2
+            .pageHeader__mainMenuSubmenuContainer
+                display: block
+    &__mainMenuLink
+        padding: 0 27px 0 22px
+        position: relative
+    &__mainMenuLink[href="javascript:void(0)"]::after
+        content: ""
+        position: absolute
+        top: 20px
+        right: 15px
+        z-index: 100
+        background: url("../img/DropDownIcon.png") no-repeat center
+        width: 7px
+        height: 7px
+        background-size: contain
+    &__mainMenuSubmenuContainer
+        width: 476px
+        position: absolute
+        top: 48px
+        left: 0
+        display: none
+        height: 0
+        overflow: hidden
+        transition: height .3s ease-out
+        z-index: 99
+    &__mainMenuSubmenu
+        width: 50%
         background-color: #f2f2f2
-    .pageHeader__mainMenuSubmenuContainer
-        display: block
-.pageHeader__mainMenuSubmenuItem_opened
-    .pageHeader__mainMenuSubmenuLink
-        background-color: #e5e5e5
-    .pageHeader__mainMenuSubSubmenu
-        display: block
-
-.pageHeader__mainMenuToggle
-    height: 48px
-    background: url('../img/menu.png') no-repeat center
-    background-size: 20px
-    width: 50px
-    float: right
-    display: inline-block
-    padding: 0
-    margin: 0
-    border: none
+        margin-top: -1px
+        border-left: 1px solid rgba(0,0,0,0.05)
+        border-right: 1px solid rgba(0,0,0,0.05)
+        border-bottom: 1px solid rgba(0,0,0,0.3)
+        a:not([href="javascript:void(0)"]):hover
+            text-decoration: underline
+    &__mainMenuSubmenuItem
+        &_opened
+            .pageHeader__mainMenuSubmenuLink
+                background-color: #e5e5e5
+            .pageHeader__mainMenuSubSubmenu
+                display: block
+    &__mainMenuSubmenuLink
+        padding: 0 24px
+        width: 100%
+        position: relative
+        &:hover
+            background-color: #e5e5e5
+    &__mainMenuSubmenuLink[href="javascript:void(0)"]::after
+        content: ''
+        position: absolute
+        top: 50%
+        margin-top: -3px
+        right: 24px
+        background: url("../img/DropDownIcon.png") no-repeat center
+        width: 7px
+        height: 7px
+        background-size: contain
+        z-index: 100
+        transform: rotate(-90deg)
+    &__mainMenuSubSubmenuLink
+        padding: 0 24px
+        width: 100%
+        &:hover
+            background-color: #d9d9d9
 
 
 @media screen and (max-width: 970px)
-    .pageHeader__seacrhForm
-        border: none
-        width: 50px
-        padding: 0
-    .pageHeader__seacrhInput
-        display: none
-    .pageHeader__seacrhBtn
-        width: 100%
-        height: 48px
-        top: 0
-        left: 0
-        position: relative
-        transition: background-color .3s ease-out
-    .pageHeader__seacrhBtn:hover
-        background-color: #f2f2f2
+    .pageHeader
+        &__seacrhForm
+            border: none
+            width: 50px
+            padding: 0
+        &__seacrhInput
+            display: none
+        &__seacrhBtn
+            width: 100%
+            height: 48px
+            top: 0
+            left: 0
+            position: relative
+            transition: background-color .3s ease-out
+            &:hover
+                background-color: #f2f2f2
 
 
 @media screen and (min-width: 800px)
-    .pageHeader__mainMenuToggle_mobile
-        display: none
-    .pageHeader__mainMenuSubSubmenu
-        width: 50%
-        position: absolute
-        min-height: 100%
-        background: #e5e5e5
-        top: 0
-        left: 50%
-        display: none
-        padding-bottom: 8px
-        border-right: 1px solid rgba(0,0,0,0.05)
-        border-bottom: 1px solid rgba(0,0,0,0.3)
+    .pageHeader
+        &__mainMenuToggle
+            &_mobile
+                display: none
+        &__mainMenuSubSubmenu
+            width: 50%
+            position: absolute
+            min-height: 100%
+            background: #e5e5e5
+            top: 0
+            left: 50%
+            display: none
+            padding-bottom: 8px
+            border-right: 1px solid rgba(0,0,0,0.05)
+            border-bottom: 1px solid rgba(0,0,0,0.3)
 
 
 @media screen and (max-width: 799px)
-    .pageHeader__mainMenuContainer
-        position: absolute
-        width: 300px
-        float: none
-        display: block
-        background: #f2f2f2
-        z-index: 100
-        top: 48px
-        right: 0
-        margin-left: 0
-        overflow: scroll
-        transform: translateX(100%)
-        transition: transform .3s ease-out
-    .pageHeader__mainMenuContainer_opened
-        transform: translateX(0)
-    .pageHeader__mainMenu,
-    .pageHeader__mainMenuItem
-        float: none
-        display: block
-    .pageHeader__mainMenuLink
-        &:hover
+    .pageHeader
+        &__mainMenuContainer
+            position: absolute
+            width: 300px
+            float: none
+            display: block
+            background: #f2f2f2
+            z-index: 100
+            top: 48px
+            right: 0
+            margin-left: 0
+            overflow: scroll
+            transform: translateX(100%)
+            transition: transform .3s ease-out
+            &_opened
+                transform: translateX(0)
+        &__mainMenu,
+        &__mainMenuItem
+            float: none
+            display: block
+        &__mainMenuLink
+            &:hover
+                background-color: #e5e5e5
+        &__mainMenuSubmenuContainer
+            position: relative
+            width: 100%
+            top: 0
+            left: 0
+            &_freeSize
+                height: auto !important
+                overflow: visible
+        &__mainMenuSubmenu
+            width: 100%
+            border: none
+            padding-bottom: 0
             background-color: #e5e5e5
-    .pageHeader__mainMenuSubmenuContainer
-        position: relative
-        width: 100%
-        top: 0
-        left: 0
-    .pageHeader__mainMenuSubmenuContainer_freeSize
-        height: auto !important
-        overflow: visible
-    .pageHeader__mainMenuSubmenu
-        width: 100%
-        border: none
-        padding-bottom: 0
-        background-color: #e5e5e5
-        display: block
-    .pageHeader__mainMenuSubmenuLink[href="javascript:void(0)"]
-        &::after
-            transform: none
-        &:hover
+            display: block
+        &__mainMenuSubmenuLink[href="javascript:void(0)"]
+            &::after
+                transform: none
+            &:hover
+                background-color: #d9d9d9
+        &__mainMenuSubSubmenu
             background-color: #d9d9d9
-    .pageHeader__mainMenuSubSubmenu
-        background-color: #d9d9d9
-    .pageHeader__mainMenuSubSubmenuLink
-        &:hover
-            background-color: #ccc
-    .pageHeader__mainMenuSubmenuItem
-        overflow: hidden
-        height: 48px
-        transition: height .3s ease-out
+        &__mainMenuSubSubmenuLink
+            &:hover
+                background-color: #ccc
+        &__mainMenuSubmenuItem
+            overflow: hidden
+            height: 48px
+            transition: height .3s ease-out
 
 
 @media screen and (max-width: 550px)
-    .pageHeader__signInContainer
-        display: none
-    .pageHeader__container
-        width: 100%
-        padding-left: 10px
-    .pageHeader__seacrhInput
-        display: none
+    .pageHeader
+        &__signInContainer
+            display: none
+        &__container
+            width: 100%
+            padding-left: 10px
+        &__seacrhInput
+            display: none
 
 
 @media screen and (max-width: 400px)
-    .pageHeader__mainMenuContainer
-        width: 100%
+    .pageHeader
+        &__mainMenuContainer
+            width: 100%
