@@ -217,9 +217,9 @@
     .pageHeader__mainMenuContainer
         position: absolute
         width: 300px
+        float: none
+        display: block
         background: #f2f2f2
-        height: 100%
-        overflow: auto
         z-index: 100
         top: 48px
         right: 0
@@ -241,6 +241,9 @@
         width: 100%
         top: 0
         left: 0
+    .pageHeader__mainMenuSubmenuContainer_freeSize
+        height: auto !important
+        overflow: visible
     .pageHeader__mainMenuSubmenu
         width: 100%
         border: none
