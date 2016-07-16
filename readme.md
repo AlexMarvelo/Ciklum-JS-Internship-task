@@ -1,4 +1,4 @@
-# Mixed homepage
+# Cirlum JS Internship test
 This is a task project for Ciklum JS Internship 2016<br>
 Project is available on [gh-pages](https://alexmarvelo.github.io/Mixed-homepage/)
 
