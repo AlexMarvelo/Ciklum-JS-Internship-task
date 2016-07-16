@@ -1,11 +1,11 @@
 {
-  "name": "ciklum-js-internship-task",
+  "name": "mixed-homepage",
   "version": "0.1.0",
-  "description": "This is a test project for Ciklum JS Internship 2016",
+  "description": "Ciklum JavaScript Internship 2016 test project",
   "author": "Alexey Mironenko",
   "repository": {
     "type": "git",
-    "url": "git@bitbucket.org:AlexMarvelo/ciklum-js-internship-task.git"
+    "url": "git@github.com:AlexMarvelo/Mixed-homepage.git"
   },
   "license": "ISC",
   "dependencies": {
