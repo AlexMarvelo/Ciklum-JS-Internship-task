@@ -23,6 +23,7 @@ module.exports = {
                 if (!mainMenuContainer.hasClass('pageHeader__mainMenuContainer_opened')) {
                     setTimeout(function () {
                         self.closeAllMenuItems(mainMenu);
+                        mainMenuContainer.height('auto');
                     }, 300);
                 }
             });
