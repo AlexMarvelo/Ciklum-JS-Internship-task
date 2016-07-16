@@ -1,3 +1,5 @@
+
+
 class App {
     constructor(){
         this.pageHeader = require('../blocks/pageHeader/pageHeader.js');
@@ -10,6 +12,8 @@ class App {
         this.subscribe.init();
         this.pageFooter.init();
     }
+
+
 }
 
 const myApp = new App();
