@@ -1,6 +1,7 @@
 # Ciklum JS Internship test
 This is a task project for Ciklum JS Internship 2016<br>
-Project is available on [gh-pages](https://alexmarvelo.github.io/Mixed-homepage/)
+Markup page consists of different parts of other sites.<br>
+Project is available on [gh-pages](https://alexmarvelo.github.io/Ciklum-JS-internship-test)
 
 ---
 
@@ -18,9 +19,11 @@ Project is available on [gh-pages](https://alexmarvelo.github.io/Mixed-homepage/
 
 ##### To run the project locally, use:
 ```
-git clone git@github.com:AlexMarvelo/Mixed-homepage.git
-cd Mixed-homepage
+git clone https://github.com/AlexMarvelo/Ciklum-JS-internship-test.git
+cd Ciklum-JS-internship-test
 npm i
 grunt
 ```
 Then open *build/index.html* file in your browser
+
+![Page Screenshot](http://heyalex.xyz/static/img/screenshot-cjsi-test.png)
